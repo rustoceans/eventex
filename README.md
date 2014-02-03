@@ -1,4 +1,0 @@
-wttd
-====
-
-Sistema de eventos
