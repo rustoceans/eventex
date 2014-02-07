@@ -13,3 +13,6 @@ include/
 
 ## Remove anything byte code
 *.mwb.bak
+
+*~
+*.sqlite
