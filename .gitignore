@@ -10,3 +10,6 @@ include/
 *.pyc
 *.py[co]
 .Python
+
+## Remove anything byte code
+*.mwb.bak
