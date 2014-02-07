@@ -1,0 +1,40 @@
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>EventeX | O evento mais sensacional do ano depois da Dev in Rio!</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body class="{% block bodyclass%}{% endblock %}">
+    <section id="main">
+        <header>
+            <div class="container">
+                <h1 class="logo">evente<strong>X</strong></h1>
+            </div>
+        </header>
+
+        <section id="content">
+            <section class="container">
+                {% block content %}{% endblock %}
+            </section>
+
+            <div class="clearfix"></div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p class="left">&copy; 2014. EventeX, todos os direitos reservados. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/br/80x15.png"></a></p>
+
+                <p class="right">
+                    <a href="http://www.djangoproject.com/" id="django" target="_blank"><img src="https://djangoproject.com/s/img/badges/djangosite100x25.gif" border="0" alt="A Django site." title="A Django site."></a>
+                </p>
+            </div>
+        </footer>
+    </section>
+</body>
+</html>
