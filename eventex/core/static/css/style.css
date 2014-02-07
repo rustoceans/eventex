@@ -50,8 +50,13 @@ header {
     background-color: #fff;
     padding: 10px 20px;
 }
-h1.logo {
+h1.logo > a {
+    color: #444;
     font-family: 'Offside', sans-serif;
+    text-decoration: none !important;
+}
+h1.logo > a:hover {
+    color: #000;
 }
 .marketing-title {
     color: #fff;
