@@ -26,7 +26,7 @@ sys.path.append(BASE_DIR.ancestor(1).child('app'))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', defaul=False, cast=bool)
 
 TEMPLATE_DEBUG = True
 
@@ -63,8 +63,10 @@ WSGI_APPLICATION = 'eventex.wsgi.application'
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
-    'default': db_url.config(
-        default='sqlite:///%s' % BASE_DIR.child('db.sqlite'))
+    'default': config(
+        'DATABASE',
+        default='sqlite:///%s' % BASE_DIR.child('db.sqlite'),
+        cast=db_url),
 }
 
 # Internationalization
