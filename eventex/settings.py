@@ -9,17 +9,21 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-from unipath import Path
-import dj_database_url
+import sys
+import unipath
+from decouple import config
+from dj_database_url import parse as db_url
 
-BASE_DIR = Path(__file__).parent
+BASE_DIR = unipath.Path(__file__).parent
+
+sys.path.append(BASE_DIR.ancestor(1).child('app'))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '^_n%d-$^k_oxj6e4pwj+zv5s6$h$sxf7na!d6@q4=1&+oe+ydg'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,7 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'eventex.core',
+    'core',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -59,7 +63,7 @@ WSGI_APPLICATION = 'eventex.wsgi.application'
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
+    'default': db_url.config(
         default='sqlite:///%s' % BASE_DIR.child('db.sqlite'))
 }
 
@@ -84,5 +88,5 @@ STATIC_URL = '/static/'
 
 # Templates dir
 TEMPLATE_DIRS = (
-    BASE_DIR.child('core', 'templates'),
+    BASE_DIR.child('app', 'core', 'templates'),
 )
