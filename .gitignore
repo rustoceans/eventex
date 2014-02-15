@@ -18,3 +18,4 @@ include/
 *.sqlite
 
 .env
+eventex/staticfiles
