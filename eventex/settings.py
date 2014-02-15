@@ -26,11 +26,11 @@ sys.path.append(BASE_DIR.ancestor(1).child('app'))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', defaul=False, cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
@@ -58,13 +58,11 @@ ROOT_URLCONF = 'eventex.urls'
 
 WSGI_APPLICATION = 'eventex.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
 DATABASES = {
     'default': config(
-        'DATABASE',
+        'DATABASE_URL',
         default='sqlite:///%s' % BASE_DIR.child('db.sqlite'),
         cast=db_url),
 }
