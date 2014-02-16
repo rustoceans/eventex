@@ -10,7 +10,6 @@ A aplicação está hospedada no Heroku e pode ser visualizada [aqui.](http://ma
 
     git clone https://github.com/matheusho/wttd.git
     cd wttd
-
     pip install -r requirements/local.txt
 
 
