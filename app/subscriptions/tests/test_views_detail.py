@@ -6,7 +6,7 @@ from subscriptions.models import Subscription
 class DetailTest(TestCase):
     def setUp(self):
         s = Subscription.objects.create(
-            name='Matheus',
+            name='Matheus Oliveira',
             cpf='364.622.978-08',
             email='matheus@coder42.com',
             phone='(16) 98170-0339')
@@ -28,11 +28,11 @@ class DetailTest(TestCase):
 
     def test_html(self):
         """ Check if subscription data was rendered. """
-        self.assertContains(self.resp, 'Matheus')
+        self.assertContains(self.resp, 'Matheus Oliveira')
 
 
 class DetailNotFoundTest(TestCase):
     def test_not_found(self):
         """ Subscription Not found. """
-        response = self.client.get('/incricao/0/')
+        response = self.client.get('/inscricao/0/')
         self.assertEquals(404, response.status_code)

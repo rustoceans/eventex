@@ -8,7 +8,7 @@ from subscriptions.models import Subscription
 class SubscriptionTest(TestCase):
     def setUp(self):
         self.obj = Subscription(
-            name='Matheus',
+            name='Matheus Oliveira',
             cpf='36462297808',
             email='oliveira.matheusde@gmail.com',
             phone='(16) 981700339')
@@ -24,14 +24,14 @@ class SubscriptionTest(TestCase):
         self.assertIsInstance(self.obj.created_at, datetime)
 
     def test_unicode(self):
-        self.assertEquals(u'Matheus', unicode(self.obj))
+        self.assertEquals(u'Matheus Oliveira', unicode(self.obj))
 
 
 class SubscriptionUniqueTest(TestCase):
     def setUp(self):
         # Create a first entry to force colision.
         Subscription.objects.create(
-            name='Matheus',
+            name='Matheus Oliveira',
             cpf='36462297808',
             email='oliveira.matheusde@gmail.com',
             phone='(16) 981700339')
@@ -39,7 +39,7 @@ class SubscriptionUniqueTest(TestCase):
     def test_cpf_unique(self):
         """ CPF must be a unique. """
         s = Subscription(
-            name='Matheus',
+            name='Matheus Oliveira',
             cpf='36462297808',
             email='matheus@gmail.com',
             phone='(16) 981700339')
@@ -48,7 +48,7 @@ class SubscriptionUniqueTest(TestCase):
     def test_email_unique(self):
         """ CPF must be a unique. """
         s = Subscription(
-            name='Matheus',
+            name='Matheus Oliveira',
             cpf='36462297810',
             email='oliveira.matheusde@gmail.com',
             phone='(16) 981700339')

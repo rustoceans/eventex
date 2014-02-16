@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p>Parabéns {{ subscription.name }}</p>
+<h1>Parabéns {{ subscription.name }}</h1>
 <p>Sua inscrição foi realizada em {{ subscription.created_at|date:"d/m/Y" }}</p>
 
-<p>Em breve entraremos em contato
-    {% if subscription.phone %}
-    {{ subscription.phone }}
-    {% else %}
-    e-mail {{ subscription.email }}
-    {% endif %}
-</p>
+<div class="clearfix">
+    <p>Em breve entraremos em contato
+        {% if subscription.phone %}
+        {{ subscription.phone }}
+        {% else %}
+        e-mail {{ subscription.email }}
+        {% endif %}
+    </p>
+</div>
 
+<div class="form-group">
+    <a href="/" class="button">Voltar ao site</a>
+</div>
 {% endblock content %}
