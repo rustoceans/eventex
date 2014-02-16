@@ -14,10 +14,12 @@ html, body {
 }
 
 body {
-    background-image: url(../img/bg.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     font-family: 'Open-Sans', sans-serif;
+}
+body.home {
+    background-image: url(../img/bg.jpg);
 }
 a {
     color: #666;
@@ -47,10 +49,13 @@ p {
     background-color: #00aba9 !important;
 }
 header {
+    height: 33px;
     background-color: #fff;
-    padding: 10px 20px;
+    padding: 15px 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3)
 }
 h1.logo > a {
+    float: left;
     color: #444;
     font-family: 'Offside', sans-serif;
     text-decoration: none !important;
@@ -61,19 +66,20 @@ h1.logo > a:hover {
 .marketing-title {
     color: #fff;
     font-size: 42px;
+    margin-top: 20px;
 }
 .marketing-box {
     clear: both;
     padding-top: 40px;
 }
-.home #content > .container {
-    padding-top: 60px;
+#content > .container {
+    padding-top: 40px;
 }
 footer {
     width: 100%;
     position: absolute;
     bottom: 0;
-    background: #fff;
+    background: #f2f2f2;
     padding: 20px 0;
     font-size: 12px;
 }
@@ -85,4 +91,17 @@ footer {
 }
 .right {
     float: right;
+}
+nav > ul li {
+    list-style-type: none;
+    display: inline-block;
+}
+nav > ul li > a {
+    display: block;
+    text-decoration: none;
+    color: #666;
+    padding: 8px 20px;
+}
+nav > ul li > a:hover {
+    color: #000;
 }
