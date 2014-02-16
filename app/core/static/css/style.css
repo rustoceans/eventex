@@ -83,6 +83,9 @@ h1.logo > a:hover {
     clear: both;
     padding-top: 40px;
 }
+.marketing-box p {
+    margin: 0;
+}
 #content > .container {
     padding-top: 40px;
 }
