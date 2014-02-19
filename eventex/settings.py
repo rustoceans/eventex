@@ -86,8 +86,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 STATIC_ROOT = BASE_DIR.child('staticfiles')
 STATIC_URL = '/static/'
-
-# Templates dir
-TEMPLATE_DIRS = (
-    BASE_DIR.child('app', 'core', 'templates'),
-)
