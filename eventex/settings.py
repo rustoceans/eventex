@@ -59,7 +59,6 @@ ROOT_URLCONF = 'eventex.urls'
 
 WSGI_APPLICATION = 'eventex.wsgi.application'
 
-# Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 DATABASES = {
     'default': config(
@@ -71,18 +70,23 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 STATIC_ROOT = BASE_DIR.child('staticfiles')
+
 STATIC_URL = '/static/'
+
+# Do you use South to prepare database on tests?
+# True or False
+SOUTH_TESTS_MIGRATE = False
