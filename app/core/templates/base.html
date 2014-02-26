@@ -14,13 +14,12 @@
     <section id="main">
         <header>
             <div class="container">
-                <h1 class="logo"><a href="/">evente<strong>X</strong></a></h1>
+                <h1 class="logo"><a href="{% url 'core:home' %}">evente<strong>X</strong></a></h1>
 
                 <nav class="right">
                     <ul>
-                        <li><a href="/" title="Home">Home</a></li>
-                        <li><a href="/inscricao/" title="Inscrição">Inscrição</a></li>
-
+                        <li><a href="{% url 'core:home' %}" title="Home">Home</a></li>
+                        <li><a href="{% url 'subscriptions:subscribe' %}" title="Inscrição">Inscrição</a></li>
                     </ul>
                 </nav>
             </div>
