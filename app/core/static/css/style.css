@@ -160,3 +160,12 @@ ul.errorlist {
     color: #AC0000;
     list-style-type: none;
 }
+.input-phone > input {
+    width: 10%;
+    float: left;
+    margin-right: 10px;
+}
+.input-phone > input + input {
+    width: 50%;
+    float: left;
+}
