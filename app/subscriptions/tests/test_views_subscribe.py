@@ -41,11 +41,11 @@ class SubscribePostTest(TestCase):
     def setUp(self):
         data = dict(
             name='Matheus Oliveira', cpf='36462297808',
-            email='oliveira.matheusde@gmail.com.br', phone='(16) 981700339')
+            email='oliveira.matheusde@gmail.com.br', phone='(16)9-81700339')
         self.resp = self.client.post(r('subscriptions:subscribe'), data)
 
     def test_post(self):
-        """ Vaild POST should redirect to /inscricao/1 """
+        """ Vaild POST should redirect to /inscricao/1/ """
         self.assertEquals(302, self.resp.status_code)
 
     def test_save(self):
@@ -55,9 +55,9 @@ class SubscribePostTest(TestCase):
 
 class SubscribeInvalidPostTest(TestCase):
     def setUp(self):
-        data = dict(
-            name='Matheus Oliveira', cpf='3646229780811',
-            email='oliveira.matheusde@gmail.com.br', phone='(16) 981700339')
+        data = dict(name='Matheus Oliveira', cpf='3646229780811',
+                    email='oliveira.matheusde@gmail.com.br',
+                    phone='(16) 981700339')
         self.resp = self.client.post(r('subscriptions:subscribe'), data)
 
     def test_post(self):

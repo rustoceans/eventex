@@ -10,7 +10,8 @@ class DetailTest(TestCase):
             name='Matheus Oliveira',
             cpf='364.622.978-08',
             email='matheus@coder42.com',
-            phone='(16) 98170-0339')
+            phone='(16) 98170-0339'
+        )
         self.resp = self.client.get(r('subscriptions:detail', args=[1]))
 
     def test_get(self):

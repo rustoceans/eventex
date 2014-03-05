@@ -11,7 +11,8 @@ class SubscriptionTest(TestCase):
             name='Matheus Oliveira',
             cpf='36462297808',
             email='oliveira.matheusde@gmail.com',
-            phone='(16) 981700339')
+            phone='(16) 981700339'
+        )
 
     def test_create(self):
         """ Subscription must have name, cpf, email and phone. """
@@ -36,24 +37,27 @@ class SubscriptionUniqueTest(TestCase):
         # Create a first entry to force colision.
         Subscription.objects.create(
             name='Matheus Oliveira',
-            cpf='36462297808',
+            cpf='36462297809',
             email='oliveira.matheusde@gmail.com',
-            phone='(16) 981700339')
+            phone='(16) 981700339'
+        )
 
     def test_cpf_unique(self):
         """ CPF must be a unique. """
         s = Subscription(
             name='Matheus Oliveira',
-            cpf='36462297808',
+            cpf='36462297809',
             email='matheus@gmail.com',
-            phone='(16) 981700339')
+            phone='(16)981700339'
+        )
         self.assertRaises(IntegrityError, s.save)
 
     def test_email_unique(self):
-        """ CPF must be a unique. """
-        s = Subscription(
+        """ E-mail is not unique anymore. """
+        s = Subscription.objects.create(
             name='Matheus Oliveira',
             cpf='36462297810',
             email='oliveira.matheusde@gmail.com',
-            phone='(16) 981700339')
-        self.assertRaises(IntegrityError, s.save)
+            phone='(16) 981700339'
+        )
+        self.assertEqual(2, s.pk)
