@@ -45,7 +45,7 @@ input {
 }
 #content {
     position: relative;
-    padding-bottom: 100px;
+    padding-bottom: 130px;
     min-height: 100%;
 }
 .container {
@@ -168,4 +168,16 @@ ul.errorlist {
 .input-phone > input + input {
     width: 50%;
     float: left;
+}
+.alert {
+    display: block;
+    padding: 15px !important;
+    margin: 20px 0 0;
+}
+.alert.alert-error {
+    color: #fff !important;
+    background-color: #e74c3c !important;
+}
+.alert.alert-error > .errorlist {
+    color: #fff !important;
 }
