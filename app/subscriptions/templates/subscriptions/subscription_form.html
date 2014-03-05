@@ -6,6 +6,8 @@
 <form action="." method="post">
     {% csrf_token %}
 
+    {{ form.non_field_errors }}
+
     <div class="span5">
         <div class="form-group">
             {{ form.name.label_tag}}

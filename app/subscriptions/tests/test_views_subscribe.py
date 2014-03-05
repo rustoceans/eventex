@@ -22,8 +22,8 @@ class SubscribeTest(TestCase):
         """ Html contains input control. """
         self.assertContains(self.resp, '<form')
         self.assertContains(self.resp, '<label', 4)
-        self.assertContains(self.resp, '<input', 6)
-        self.assertContains(self.resp, 'type="text"', 3)
+        self.assertContains(self.resp, '<input', 7)
+        self.assertContains(self.resp, 'type="text"', 4)
         self.assertContains(self.resp, 'type="email"')
         self.assertContains(self.resp, 'type="submit"')
 
@@ -34,6 +34,7 @@ class SubscribeTest(TestCase):
     def test_has_form(self):
         """ Context must have the subscription form. """
         form = self.resp.context['form']
+
         self.assertIsInstance(form, SubscriptionForm)
 
 
@@ -71,3 +72,13 @@ class SubscribeInvalidPostTest(TestCase):
     def test_dont_save(self):
         """ Do not save. """
         self.assertFalse(Subscription.objects.exists())
+
+
+class TemplateRegressionTest(TestCase):
+    def test_template_has_non_field_errors(self):
+        """ Check if non_field_errors are show in template """
+        invalid_data = dict(name='Matheus Oliveira', cpf='36462297808',
+                            email='', phone='')
+        response = self.client.post(r('subscriptions:subscribe'), invalid_data)
+
+        self.assertContains(response, '<ul class="errorlist">')

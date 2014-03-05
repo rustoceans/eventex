@@ -36,4 +36,5 @@ class DetailNotFoundTest(TestCase):
     def test_not_found(self):
         """ Subscription Not found. """
         response = self.client.get(r('subscriptions:detail', args=[0]))
+
         self.assertEquals(404, response.status_code)

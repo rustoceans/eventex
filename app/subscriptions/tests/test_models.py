@@ -14,11 +14,13 @@ class SubscriptionTest(TestCase):
     def test_create(self):
         """ Subscription must have name, cpf, email and phone. """
         self.obj.save()
+
         self.assertEquals(1, self.obj.pk)
 
     def test_has_created_at(self):
         """ Subscription must have automatic created_at. """
         self.obj.save()
+
         self.assertIsInstance(self.obj.created_at, datetime)
 
     def test_unicode(self):
@@ -41,6 +43,7 @@ class SubscriptionUniqueTest(TestCase):
         s = Subscription(name='Matheus Oliveira', cpf='36462297809',
                          email='matheus@gmail.com',
                          phone='(16)981700339')
+
         self.assertRaises(IntegrityError, s.save)
 
     def test_email_can_repeat(self):
@@ -50,4 +53,5 @@ class SubscriptionUniqueTest(TestCase):
             cpf='36462297810',
             email='oliveira.matheusde@gmail.com',
             phone='(16) 981700339')
+
         self.assertEqual(2, s.pk)
