@@ -11,20 +11,30 @@ class SubscriptionsFormTest(TestCase):
 
     def test_cpf_is_digit(self):
         """ CPF must have digits. """
-        form = self.test_make_validated_form(cpf='BA3434ADFA')
+        form = self.make_validated_form(cpf='BA3434ADFA')
         self.assertItemsEqual(['cpf'], form.errors)
 
     def test_cpf_has_11_digits(self):
         """ CPF must have 11 digits. """
-        form = self.test_make_validated_form(cpf='1234')
+        form = self.make_validated_form(cpf='1234')
         self.assertItemsEqual(['cpf'], form.errors)
 
     def test_email_is_optional(self):
         """ E-mail is optional """
-        form = self.test_make_validated_form(email='')
+        form = self.make_validated_form(email='')
         self.assertFalse(form.errors)
 
-    def test_make_validated_form(self, **kwargs):
+    def test_name_must_be_capitalize(self):
+        """ Name must be capitalize """
+        form = self.make_validated_form(name='MATHEUS oliveira')
+        self.assertEquals('Matheus Oliveira', form.cleaned_data['name'])
+
+    def test_must_inform_email_or_phone(self):
+        """ Email or Phone are optional, but one must be informed. """
+        form = self.make_validated_form(email='', phone='')
+        self.assertItemsEqual(['__all__'], form.errors)
+
+    def make_validated_form(self, **kwargs):
         data = dict(name='Matheus Oliveira', cpf='36462297808',
                     email='oliveira.matheusde@gmail.com', phone='(16)98170033')
         data.update(kwargs)

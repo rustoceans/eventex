@@ -39,9 +39,9 @@ class SubscribeTest(TestCase):
 
 class SubscribePostTest(TestCase):
     def setUp(self):
-        data = dict(
-            name='Matheus Oliveira', cpf='36462297808',
-            email='oliveira.matheusde@gmail.com.br', phone='(16)9-81700339')
+        data = dict(name='Matheus Oliveira', cpf='36462297808',
+                    email='oliveira.matheusde@gmail.com.br',
+                    phone='(16)9-81700339')
         self.resp = self.client.post(r('subscriptions:subscribe'), data)
 
     def test_post(self):

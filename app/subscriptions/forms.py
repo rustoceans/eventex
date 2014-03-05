@@ -18,6 +18,12 @@ class SubscriptionForm(forms.ModelForm):
 
         self.fields['cpf'].validators.append(cpf_validator)
 
+    def clean_name(self):
+        name = self.cleaned_data['name']
+        words = map(lambda w: w.capitalize(), name.split())
+        capitalized_name = ' '.join(words)
+        return capitalized_name
+
     class Meta:
         model = Subscription
         fields = ('name', 'cpf', 'email', 'phone')
