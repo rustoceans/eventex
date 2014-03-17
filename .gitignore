@@ -1,5 +1,6 @@
 ## Remove env
 bin/
+build/
 lib/
 include/
 
