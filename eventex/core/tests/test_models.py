@@ -1,7 +1,7 @@
 # coding: utf-8
 from django.test import TestCase
 from django.core.exceptions import ValidationError
-from core.models import Speaker, Contact
+from eventex.core.models import Speaker, Contact
 
 
 class SpeakerModelTest(TestCase):

@@ -1,7 +1,7 @@
 # coding: utf-8
 from django.test import TestCase
 from django.core.urlresolvers import reverse as r
-from core.models import Speaker
+from eventex.core.models import Speaker
 
 
 class SpeakerDetailTest(TestCase):

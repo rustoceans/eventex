@@ -1,7 +1,7 @@
 # coding: utf-8
 from django.test import TestCase
 from django.core.urlresolvers import reverse as r
-from subscriptions.models import Subscription
+from eventex.subscriptions.models import Subscription
 
 
 class DetailTest(TestCase):

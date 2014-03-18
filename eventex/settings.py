@@ -15,10 +15,6 @@ from decouple import config
 from dj_database_url import parse as db_url
 
 BASE_DIR = unipath.Path(__file__).parent
-
-sys.path.append(BASE_DIR.ancestor(1).child('app'))
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 

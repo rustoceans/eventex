@@ -1,6 +1,6 @@
 # coding: utf-8
 from django.test import TestCase
-from subscriptions.forms import SubscriptionForm
+from eventex.subscriptions.forms import SubscriptionForm
 
 
 class SubscriptionsFormTest(TestCase):
