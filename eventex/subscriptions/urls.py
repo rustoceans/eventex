@@ -2,7 +2,7 @@
 from django.conf.urls import patterns, url
 
 
-urlpatterns = patterns('subscriptions.views',
+urlpatterns = patterns('eventex.subscriptions.views',
     url(r'^(\d+)/$', 'detail', name='detail'),
     url(r'^$', 'subscribe', name='subscribe'),
 )
