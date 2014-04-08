@@ -48,10 +48,9 @@ class SubscriptionUniqueTest(TestCase):
 
     def test_email_can_repeat(self):
         """ E-mail is not unique anymore. """
-        s = Subscription.objects.create(
-            name='Matheus Oliveira',
-            cpf='36462297810',
-            email='oliveira.matheusde@gmail.com',
-            phone='(16) 981700339')
+        s = Subscription.objects.create(name='Matheus Oliveira',
+                                        cpf='36462297810',
+                                        email='oliveira.matheusde@gmail.com',
+                                        phone='(16) 981700339')
 
         self.assertEqual(2, s.pk)

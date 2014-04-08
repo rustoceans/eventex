@@ -11,13 +11,9 @@ class HomeTest(TestCase):
         self.resp = self.client.get(r('core:home'))
 
     def test_get(self):
-        """
-        GET / must return status cod 200.
-        """
+        """ GET / must return status cod 200. """
         self.assertEqual(200, self.resp.status_code)
 
     def test_template(self):
-        """
-        Home must use template: index.html
-        """
+        """ Home must use template: index.html """
         self.assertTemplateUsed(self.resp, 'index.html')

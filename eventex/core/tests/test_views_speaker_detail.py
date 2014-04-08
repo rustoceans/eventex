@@ -35,6 +35,7 @@ class SpeakerDetailTest(TestCase):
     def test_context(self):
         """ Speaker must be in context. """
         speaker = self.resp.context['speaker']
+
         self.assertIsInstance(speaker, Speaker)
 
 

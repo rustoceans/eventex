@@ -36,12 +36,12 @@ class ContactModelTest(TestCase):
         self.assertEquals(1, contact.pk)
 
     def test_fax(self):
-        """ Contact must save kind phone """
+        """ Contact must save kind fax """
         contact = Contact.objects.create(speaker=self.speaker, kind='F',
                                          value='21-98170-0339')
         self.assertEquals(1, contact.pk)
 
-    def test_kid(self):
+    def test_kind(self):
         """ Contact kind should be limited to P, F or E """
         contact = Contact(speaker=self.speaker, kind='A',
                           value='21-98170-0339')
