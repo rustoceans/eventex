@@ -5,9 +5,11 @@ from eventex.core.models import Speaker
 
 
 class SpeakerDetailTest(TestCase):
+
     """
     Run tests of speaker_detail
     """
+
     def setUp(self):
         Speaker.objects.create(
             name='Matheus Oliveira',
@@ -40,6 +42,7 @@ class SpeakerDetailTest(TestCase):
 
 
 class SpeakerDetailNotFoundTest(TestCase):
+
     def test_not_found(self):
         url = r('core:speaker_detail', kwargs={'slug': 'john-jones'})
         response = self.client.get(url)

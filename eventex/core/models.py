@@ -50,7 +50,8 @@ class Talk(models.Model):
     title = models.CharField(_(u'título'), max_length=200)
     description = models.TextField(_(u'descrição'))
     start_time = models.TimeField(_(u'horário'), blank=True)
-    speakers = models.ManyToManyField('Speaker', verbose_name=_('palestrantes'))
+    speakers = models.ManyToManyField(
+        'Speaker', verbose_name=_('palestrantes'))
 
     class Meta:
         verbose_name = _('palestra')

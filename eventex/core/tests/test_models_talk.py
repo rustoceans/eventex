@@ -4,6 +4,7 @@ from eventex.core.models import Talk
 
 
 class TestModelTalk(TestCase):
+
     def setUp(self):
         self.talk = Talk.objects.create(
             title=u'Introdução ao Django',

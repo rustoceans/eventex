@@ -5,17 +5,18 @@ from eventex.core.models import Speaker, Talk
 
 
 class TalkListTest(TestCase):
+
     def setUp(self):
-        s = Speaker.objects.create(name='Matheus Oliveira',
-                                   slug='matheus-oliveira',
-                                   url='http:/coder42.com/')
+        speaker = Speaker.objects.create(name='Matheus Oliveira',
+                                         slug='matheus-oliveira',
+                                         url='http:/coder42.com/')
         t1 = Talk.objects.create(title=u'Título da palestra',
                                  description=u'Descrição da palestra',
                                  start_time='10:00')
         t2 = Talk.objects.create(title=u'Título da palestra',
                                  description=u'Descrição da palestra',
-                                 start_time='10:00')
-        s.talk_set.add(t1, t2)
+                                 start_time='13:00')
+        speaker.talk_set.add(t1, t2)
         self.resp = self.client.get(r('core:talk_list'))
 
     def test_get(self):

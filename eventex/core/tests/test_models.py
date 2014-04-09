@@ -5,6 +5,7 @@ from eventex.core.models import Speaker, Contact
 
 
 class SpeakerModelTest(TestCase):
+
     def setUp(self):
         self.speaker = Speaker(name='Matheus Oliveira',
                                slug='matheus-oliveira',
@@ -22,6 +23,7 @@ class SpeakerModelTest(TestCase):
 
 
 class ContactModelTest(TestCase):
+
     def setUp(self):
         self.speaker = Speaker.objects.create(
             name='Matheus Oliveira',
@@ -55,6 +57,7 @@ class ContactModelTest(TestCase):
 
 
 class ContactCustomManageTest(TestCase):
+
     def setUp(self):
         s = Speaker.objects.create(name='Matheus Oliveira',
                                    slug='matheus-oliveira',
