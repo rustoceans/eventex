@@ -7,9 +7,11 @@ from eventex.core.models import Speaker, Talk
 class TalkListTest(TestCase):
 
     def setUp(self):
-        speaker = Speaker.objects.create(name='Matheus Oliveira',
-                                         slug='matheus-oliveira',
-                                         url='http:/coder42.com/')
+        speaker = Speaker.objects.create(
+            name='Matheus Oliveira',
+            slug='matheus-oliveira',
+            description='Passionate software developer!',
+            url='http:/coder42.com/')
         t1 = Talk.objects.create(title=u'Título da palestra',
                                  description=u'Descrição da palestra',
                                  start_time='10:00')

@@ -1,7 +1,7 @@
 <div class="palestra">
     <h4>
         <a href="{{ talk.get_absolute_url }}">
-            {{ talk.time }} - {{ talk.title }}
+            {{ talk.start_time }} - {{ talk.title }}
         </a>
     </h4>
     {% for speaker in talk.speakers.all %}

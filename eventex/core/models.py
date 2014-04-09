@@ -1,7 +1,7 @@
 # coding: utf-8
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from .managers import KindContactManager
+from .managers import PeriodManager, KindContactManager
 
 
 class Speaker(models.Model):
@@ -53,6 +53,8 @@ class Talk(models.Model):
     speakers = models.ManyToManyField(
         'Speaker', verbose_name=_('palestrantes'))
 
+    objects = PeriodManager()
+
     class Meta:
         verbose_name = _('palestra')
         verbose_name_plural = _('palestras')
@@ -61,5 +63,12 @@ class Talk(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        # TODO: use reverse
+        # TODO: use reverse.
         return '/palestras/{pk}/'.format(pk=self.pk)
+
+
+class Course(Talk):
+    slots = models.IntegerField(_('vagas'))
+    notes = models.TextField(_(u'observações'))
+
+    objects = PeriodManager()
