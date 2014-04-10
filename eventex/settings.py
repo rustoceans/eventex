@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'south',
     'eventex.core',
     'eventex.subscriptions',
+    'eventex.myauth',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -86,3 +87,5 @@ STATIC_URL = '/static/'
 # Do you use South to prepare database on tests?
 # True or False
 SOUTH_TESTS_MIGRATE = False
+
+AUTH_USER_MODEL = 'myauth.User'
