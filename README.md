@@ -16,8 +16,8 @@ A aplicação está hospedada no Heroku e pode ser visualizada [aqui.](http://ev
 Criar arquivo .env com a Secret Key e o modo DEBUG:
 
     touch .env
-    -- Content file
 
+    -- Content file
     SECRET_KEY='YOUR-SECRET-KEY'
     DEBUG=True
 
