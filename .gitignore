@@ -19,5 +19,5 @@ include/
 *.sqlite
 *.idea
 
-#.env
+.env
 eventex/staticfiles
