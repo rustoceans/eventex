@@ -32,6 +32,10 @@ p {
 h1 {
     font-size: 26px;
 }
+h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 input {
     padding: 5px 8px;
     border-radius: 5px;

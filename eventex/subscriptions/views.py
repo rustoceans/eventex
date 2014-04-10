@@ -1,7 +1,7 @@
 # coding: utf-8
 from django.views.generic import CreateView, DetailView
-from .forms import SubscriptionForm
 from .models import Subscription
+from .forms import SubscriptionForm
 
 
 class SubscriptionCreate(CreateView):
